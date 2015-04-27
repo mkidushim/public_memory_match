@@ -1,5 +1,6 @@
 html {
     width: 100vw;
+    height: 100vh;
 }
 
 .logo img {
@@ -19,17 +20,16 @@ html {
     bottom: 15px;
     left: 10%;
 }
+/*----^-Header-^---*/
 
-.head_info li {
+li {
     list-style: none;
 }
 
 .left_nav {
     display: inline-block;
-}
-
-.left_nav li {
-    list-style: none;
+    width: 40%;
+    font-size: 2vh;
 }
 
 .game_area {
