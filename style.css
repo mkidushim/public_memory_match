@@ -21,6 +21,7 @@ html {
     left: 10%;
 }
 /*----^-Header-^---*/
+/*---Left Nav----*/
 
 li {
     list-style: none;
@@ -31,6 +32,8 @@ li {
     width: 40%;
     font-size: 2vh;
 }
+/*--^-Left Nav-^---*/
+/*----Game Area----*/
 
 .game_area {
     position: relative;
@@ -44,10 +47,12 @@ li {
     height: 170px;
     display: inline-block;
     padding: 10px;
+    margin: 5px;
 }
 
 .card img {
     width: 115px;
     height: 175px;
+    padding: 7px;
     border: 2px solid;
 }
