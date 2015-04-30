@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+    .card_container {
+        position: relative;
+        display: inline-block;
+        background-color: red;
+        height: 150px;
+        width: 110px;
+    }
+    
+    .card {
+        height: 150px;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    
+    .card-front {
+        width: 110px;
+    }
+    
+    .card-hidden {
+        display: none;
+    }
+    </style>
+    <script>
+    var my_card = null;
+
+    function card_click(card_number) {
+        console.log('clicked on #: ', card_number);
+        //card clicked on^
+        $('#card_back' + card_number).toggleClass('card-hidden');
+        //card  hidden when clicked on ^
+
+        if (my_card == null) {
+            console.log('first click was on card ' + card_number + ', it was ' + $('#card_front' + card_number).attr('data-card'));
+
+            my_card = $('#card_front ' + card_number).attr('data-card');
+            $('#card_back1').addClass('card-hidden');
+            //do stuff for 1st click
+        } else {
+
+            console.log('second card clicked on card ' + card_number);
+
+
+            if (my_card === $('#card-front' + card_number).attr('data-card')) {
+                console.log('You have a match!');
+            } else {
+                console.log('Try again...');
+                $('.card-hidden').toggleClass('card-hidden');
+            }
+
+        }
+
+
+    };
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="game_area">
+            <div class="card_row">
+                <div class="card_container" id="card_container1">
+                    <img src="images/british_flag.jpg" class="card card-front" id="card_front1" data-card="british flag" />
+                    <img src="images/card_design.png" class="card card-back" id="card_back1" onclick="card_click(1)">
+                </div>
+                <div class="card_container" id="card_container2">
+                    <img src="images/british_flag.jpg" data-card="british flag" class="card card-front" id="card_front2">
+                    <img src="images/card_design.png" class="card card-back" id="card_back2" onclick="card_click(2)">
+                </div>
+                <div class="card_container" id="card_container3">
+                    <img src="images/dog.jpg" data-card="dog" class="card card-front" id="card_front3">
+                    <img src="images/card_design.png" class="card card-back" id="card_back3" onclick="card_click(3)">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+</script>
+
+</html>
