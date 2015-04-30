@@ -20,6 +20,7 @@
     }
     
     .card-front {
+        border-radius: 30px;
         width: 110px;
     }
     
@@ -39,24 +40,22 @@
         if (my_card == null) {
             console.log('first click was on card ' + card_number + ', it was ' + $('#card_front' + card_number).attr('data-card'));
 
-            my_card = $('#card_front ' + card_number).attr('data-card');
-            $('#card_back1').addClass('card-hidden');
+            my_card = $('#card_front' + card_number).attr('data-card');
+            $('#card_back' + card_number).addClass('card-hidden');
             //do stuff for 1st click
         } else {
 
-            console.log('second card clicked on card ' + card_number);
+            console.log('second card clicked on card: ' + card_number);
 
 
-            if (my_card === $('#card-front' + card_number).attr('data-card')) {
+            if (my_card == $('#card_front' + card_number).attr('data-card')) {
                 console.log('You have a match!');
             } else {
-                console.log('Try again...');
+                console.log('No match, try again...');
                 $('.card-hidden').toggleClass('card-hidden');
+
             }
-
         }
-
-
     };
     </script>
 </head>
@@ -74,7 +73,7 @@
                     <img src="images/card_design.png" class="card card-back" id="card_back2" onclick="card_click(2)">
                 </div>
                 <div class="card_container" id="card_container3">
-                    <img src="images/dog.jpg" data-card="dog" class="card card-front" id="card_front3">
+                    <img src="images/pets.jpg" data-card="pets" class="card card-front" id="card_front3">
                     <img src="images/card_design.png" class="card card-back" id="card_back3" onclick="card_click(3)">
                 </div>
             </div>
