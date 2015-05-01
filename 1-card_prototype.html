@@ -34,25 +34,28 @@
     function card_click(card_number) {
         console.log('clicked on #: ', card_number);
         //card clicked on^
-        $('#card_back' + card_number).toggleClass('card-hidden');
+
+
+        $('#card_back' + card_number).addClass('card-hidden');
         //card  hidden when clicked on ^
 
         if (my_card == null) {
-            console.log('first click was on card ' + card_number + ', it was ' + $('#card_front' + card_number).attr('data-card'));
-
+            console.log('first click was on card ' + card_number + ', picture is ' + $('#card_front' + card_number).attr('data-card'));
             my_card = $('#card_front' + card_number).attr('data-card');
-            $('#card_back' + card_number).addClass('card-hidden');
-            //do stuff for 1st click
+
+
+            //1st click  shows card-front hides card-back logs what card number and  attr from data-card 
         } else {
 
-            console.log('second card clicked on card: ' + card_number);
-
-
-            if (my_card == $('#card_front' + card_number).attr('data-card')) {
+            console.log('second card clicked on card: ' + card_number + ' ,picture is ' + $('#card_front' + card_number).attr('data-card'));
+            if (my_card === $('#card_front' + card_number).attr('data-card')) {
                 console.log('You have a match!');
+
             } else {
                 console.log('No match, try again...');
-                $('.card-hidden').toggleClass('card-hidden');
+                setTimeout(function() {
+                    $('.card-hidden').removeClass('card-hidden');
+                }, 1500);
 
             }
         }
