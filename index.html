@@ -6,6 +6,25 @@
     <title>JS Memory Match Game</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
+    .stats > li {
+        font-size: 20px;
+        border: 3px solid black;
+        display: block;
+        width: 30%;
+        margin: 10px;
+        padding: 5px;
+    }
+    
+    #timer {
+        width: 20px;
+        height: 15px;
+        padding: 10px;
+    }
+    
+    .card_row {
+        margin-top: -100px;
+    }
+    
     .card_container {
         position: relative;
         display: inline-block;
@@ -30,13 +49,41 @@
     }
     
     .cards-matched {
-        border: 4px solid blue;
+        border: 2px solid black;
     }
     </style>
     <script>
     var clicked_card = null;
+    var counter_match = 0;
+    var counter_missed = 0;
+    var attempts = 0;
+
+
+    var Timer;
+    var TotalSeconds;
+
+
+    function CreateTimer(TimerID, Time) {
+        Timer = document.getElementById(TimerID);
+        TotalSeconds = Time;
+
+        UpdateTimer()
+        window.setTimeout("Tick()", 1000);
+    }
+
+    function Tick() {
+        TotalSeconds -= 1;
+        UpdateTimer()
+        window.setTimeout("Tick()", 1000);
+    }
+
+    function UpdateTimer() {
+        Timer.innerHTML = TotalSeconds;
+    }
+
     //set clicked_card = to null so that we can check wich card has been clicked first
     function card_click(card_number) {
+
         //declared function card_click with parameter card_number
         console.log("card_number : ", card_number);
         // logs card-number that is clicked to console
@@ -58,10 +105,13 @@
         } else {
             //if player has clicked on a card to match do code below
             console.log("Second card was clicked");
-            //log 'second card was clicked'
+            attempts++;
+            console.log(attempts)
+                //log 'second card was clicked'
             if (clicked_card === current_card_data) {
                 //if first card clicked card-data == to current_card_data run code below
                 console.log("We have a match");
+                $('cardFrontId').addClass('cards-matched')
 
                 //log 'we have a match' to console
                 setTimeout(function() {
@@ -69,9 +119,12 @@
                 }, 1200);
                 $('cardFrontId').addClass('cards-matched')
 
+                counter_match++;
+                $('#matches').html('Matched Cards: ' + counter_match)
+                console.log('Matched cards : ', counter_match);
                 clicked_card = null;
-
-                //reset clicked-card to null so that clicks are reset 
+                $('#accuracy').html('Accuracy : ' + counter_match / (counter_match + counter_missed))
+                    //reset clicked-card to null so that clicks are reset 
 
                 //clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
@@ -82,7 +135,9 @@
                 setTimeout(function() {
                     $('.card-hidden').removeClass('card-hidden');
                 }, 1200);
-                //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
+                counter_missed++;
+                $('#misses').html('Missed Cards : ' + counter_missed)
+                    //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
                 clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
 
@@ -108,9 +163,14 @@
     </div>
     <div class="left_nav">
         <ul class="stats">
-            <li>Time Played:</li>
-            <li>Number of tries:</li>
-            <li>Accuracy:</li>
+            <li id="matches">Matched Cards:0</li>
+            <li id="misses">Missed Cards:0</li>
+            <li id="accuracy">Accuracy:0</li>
+            <li id='timer'>
+                <script type="text/javascript">
+                window.onload = CreateTimer("timer", 99);
+                </script>
+            </li>
         </ul>
         <div class="game_info">
             <ul>
