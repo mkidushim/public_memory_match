@@ -29,7 +29,9 @@
         display: none;
     }
     
-    .cards-matched {}
+    .cards-matched {
+        border: 4px solid blue;
+    }
     </style>
     <script>
     var clicked_card = null;
@@ -63,10 +65,15 @@
 
                 //log 'we have a match' to console
                 setTimeout(function() {
-                    $('.card-hidden').removeClass('card-hidden');
+                    $('.card-hidden').addClass('card-hidden');
                 }, 1200);
-                //reset clicked-card to null so that clicks are reset 
+                $('cardFrontId').addClass('cards-matched')
+
                 clicked_card = null;
+
+                //reset clicked-card to null so that clicks are reset 
+
+                //clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
             } else {
                 //if clicked card === to current card data
