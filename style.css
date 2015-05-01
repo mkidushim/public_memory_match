@@ -17,7 +17,7 @@ html {
 .head_info {
     display: inline-block;
     position: relative;
-    bottom: 15px;
+    bottom: 0px;
     left: 10%;
 }
 /*----^-Header-^---*/

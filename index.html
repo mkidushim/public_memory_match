@@ -15,14 +15,24 @@
         padding: 5px;
     }
     
+    .stats {
+        width: 60%;
+        height: 100%;
+    }
+    
     #timer {
         width: 20px;
         height: 15px;
         padding: 10px;
     }
     
+    .game_area {
+        position: relative;
+        left: 25%;
+    }
+    
     .card_row {
-        margin-top: -100px;
+        margin-bottom: 15px;
     }
     
     .card_container {
@@ -31,6 +41,7 @@
         background-color: red;
         height: 150px;
         width: 110px;
+        margin-right: 5px;
     }
     
     .card {
@@ -41,6 +52,7 @@
     }
     
     .card-front {
+        background-color: black;
         width: 110px;
     }
     
@@ -49,7 +61,7 @@
     }
     
     .cards-matched {
-        border: 2px solid black;
+        display: none;
     }
     </style>
     <script>
@@ -57,16 +69,12 @@
     var counter_match = 0;
     var counter_missed = 0;
     var attempts = 0;
-
-
     var Timer;
     var TotalSeconds;
-
 
     function CreateTimer(TimerID, Time) {
         Timer = document.getElementById(TimerID);
         TotalSeconds = Time;
-
         UpdateTimer()
         window.setTimeout("Tick()", 1000);
     }
@@ -78,12 +86,10 @@
     }
 
     function UpdateTimer() {
-        Timer.innerHTML = TotalSeconds;
-    }
-
-    //set clicked_card = to null so that we can check wich card has been clicked first
+            Timer.innerHTML = TotalSeconds;
+        }
+        //set clicked_card = to null so that we can check wich card has been clicked first
     function card_click(card_number) {
-
         //declared function card_click with parameter card_number
         console.log("card_number : ", card_number);
         // logs card-number that is clicked to console
@@ -105,29 +111,25 @@
         } else {
             //if player has clicked on a card to match do code below
             console.log("Second card was clicked");
-            attempts++;
-            console.log(attempts)
-                //log 'second card was clicked'
+
+            //log 'second card was clicked'
             if (clicked_card === current_card_data) {
                 //if first card clicked card-data == to current_card_data run code below
                 console.log("We have a match");
-                $('cardFrontId').addClass('cards-matched')
+                $(cardFrontId).removeClass('.card-hidden')
+                    //log 'we have a match' to console
 
-                //log 'we have a match' to console
                 setTimeout(function() {
-                    $('.card-hidden').addClass('card-hidden');
+                    $('.card-hidden').addClass('cards-matched');
                 }, 1200);
-                $('cardFrontId').addClass('cards-matched')
-
                 counter_match++;
                 $('#matches').html('Matched Cards: ' + counter_match)
                 console.log('Matched cards : ', counter_match);
                 clicked_card = null;
                 $('#accuracy').html('Accuracy : ' + counter_match / (counter_match + counter_missed))
                     //reset clicked-card to null so that clicks are reset 
-
-                //clicked_card = null;
-                //reset clicked-card to null so that clicks are reset 
+                    //clicked_card = null;
+                    //reset clicked-card to null so that clicks are reset 
             } else {
                 //if clicked card === to current card data
                 console.log("No Match");
@@ -140,7 +142,6 @@
                     //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
                 clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
-
             }
         }
     }
@@ -156,7 +157,7 @@
             <h1>Memory Match</h1>
             <ul>
                 <li>
-                    <input type="button" value="Reset">
+                    <input type="button" id="bttn" value="Reset" onclick="game_reset()">
                 </li>
             </ul>
         </div>
@@ -167,9 +168,6 @@
             <li id="misses">Missed Cards:0</li>
             <li id="accuracy">Accuracy:0</li>
             <li id='timer'>
-                <script type="text/javascript">
-                window.onload = CreateTimer("timer", 99);
-                </script>
             </li>
         </ul>
         <div class="game_info">
@@ -198,8 +196,35 @@
                 <img src="images/pets.jpg" class="card card-front" id="card_front4" data-card="puppy">
                 <img src="images/card_design.png" class="card card-back" id="card_back4" onclick="card_click(4)">
             </div>
+            <div class="card_container" id="card_container5">
+                <img src="images/starfish.jpg" class="card card-front" id="card_front5" data-card="starfish" />
+                <img src="images/card_design.png" class="card card-back" id="card_back5" onclick="card_click(5)" />
+            </div>
         </div>
-    </div>
+        <div class="card_row">
+            <div class="card_container" id="card_container6">
+                <img src="images/british_flag.jpg" class="card card-front" id="card_front6" data-card="british flag">
+                <img src="images/card_design.png" class="card card-back" id="card_back6" onclick="card_click(6)">
+            </div>
+            <div class="card_container" id="card_container7">
+                <img src="images/british_flag.jpg" class="card card-front" id="card_front7" data-card="british flag">
+                <img src="images/card_design.png" class="card card-back" id="card_back7" onclick="card_click(7)">
+            </div>
+            <div class="card_container" id="card_container8">
+                <img src="images/pets.jpg" class="card card-front" id="card_front8" data-card="puppy">
+                <img src="images/card_design.png" class="card card-back" id="card_back8" onclick="card_click(8)">
+            </div>
+            <div class="card_container" id="card_container9">
+                <img src="images/pets.jpg" class="card card-front" id="card_front9" data-card="puppy">
+                <img src="images/card_design.png" class="card card-back" id="card_back9" onclick="card_click(9)">
+            </div>
+            <div class="card_container" id="card_container10">
+                <img src="images/starfish.jpg" class="card card-front" id="card_front10" data-card="starfish" />
+                <img src="images/card_design.png" class="card card-back" id="card_back10" onclick="card_click(10)" />
+            </div>
+            <div class="card_row">
+            </div>
+        </div>
 </body>
 
 </html>
