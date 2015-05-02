@@ -57,6 +57,10 @@
     .cards-matched {
         display: none;
     }
+    
+    .matched {
+        border: 2px solid black;
+    }
     </style>
     <script>
     var clicked_card = null;
@@ -103,10 +107,10 @@
                 $('#matches').html('Matched Cards : ' + counter_match)
                 console.log('Matched cards : ', counter_match);
                 clicked_card = null;
-                $('#accuracy').html('Accuracy : ', counter_match / (counter_match + counter_missed))
-                    //reset clicked-card to null so that clicks are reset 
-                    //clicked_card = null;
-                    //reset clicked-card to null so that clicks are reset 
+
+                //reset clicked-card to null so that clicks are reset 
+                //clicked_card = null;
+                //reset clicked-card to null so that clicks are reset 
             } else {
                 //if clicked card === to current card data
                 console.log("No Match");
@@ -117,10 +121,15 @@
                 counter_missed++;
                 $('#misses').html('Missed Cards : ' + counter_missed)
                     //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
+
                 clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
             }
+
+            var acc = counter_match + counter_missed;
+            $('#accuracy').html('Accuracy : ' + acc / counter_match.toFixed());
         }
+
     }
     </script>
 </head>
@@ -171,7 +180,7 @@
                 <img src="images/card_design.png" class="card card-back" id="card_back5" onclick="card_click(5)" />
             </div>
             <div class="card_container" id="card_container6">
-                <img src="images/dog.jpg" class="card card-front" id="card_front6" data-card="dog" />
+                <img src="images/starfish.jpg" class="card card-front" id="card_front6" data-card="starfish" />
                 <img src="images/card_design.png" class="card card-back" id="card_back6" onclick="card_click(6)" />
             </div>
         </div>
