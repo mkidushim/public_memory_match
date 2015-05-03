@@ -1,6 +1,6 @@
 body {
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 650px;
 }
 
 .logo img {
@@ -18,13 +18,17 @@ body {
     display: inline-block;
     position: relative;
     bottom: 15px;
-    left: 10%;
+    left: 6%;
 }
 /*----^-Header-^---*/
 /*---Left Nav----*/
 
 li {
+    font-size: 20px;
+    display: block;
+    padding: 20px 0px 10px 0px;
     list-style: none;
+    width: 220px;
 }
 
 .left_nav {
@@ -36,24 +40,39 @@ li {
 /*----Game Area----*/
 
 .game_area {
-    display: block;
     position: relative;
-    left: 20%;
-    bottom: 150px;
+    left: 25%;
+    bottom: 175px;
 }
 
-.card-front1 {
-    width: 100px;
-    height: 120px;
+.card_row {}
+
+.card_container {
+    position: relative;
     display: inline-block;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 100px;
+    background-color: red;
+    height: 150px;
+    width: 110px;
+    margin: 5px 5px 15px 5px;
 }
 
-.card-back1 {
-    width: 115px;
-    height: 175px;
-    padding: 7px;
-    border: 2px solid;
+.card {
+    height: 150px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.card-front {
+    background-color: black;
+    width: 110px;
+    border-radius: 30px;
+}
+
+.card-hidden {
+    display: none;
+}
+
+.cards-matched {
+    display: none;
 }
