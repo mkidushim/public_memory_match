@@ -1,0 +1,107 @@
+/* HEADER */
+
+body {
+    font-family: Impact;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    font-size: 30px;
+    font-style: italic;
+    width: 100%;
+    height: 15%;
+    background-color: lavender;
+    text-align: center;
+    margin-bottom: 3%;
+    box-shadow: 0px 5px 15px purple;
+}
+
+#reset {
+    position: relative;
+    bottom: 10px;
+    border: none;
+    background-color: purple;
+    width: 80px;
+    height: 30px;
+    color: white;
+}
+
+#reset:hover {
+    box-shadow: 0px 0px 20px blue;
+}
+
+.game-stats {
+    display: inline-block;
+    width: 15%;
+    height: 600px;
+    background-color: lavender;
+    margin-right: 5%;
+    margin-left: 2%;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 11px purple;
+    vertical-align: top;
+}
+
+.game-stats h3 {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+}
+
+.game-stats p {
+    font-size: 16px;
+    height: 15%;
+    padding-left: 10px;
+    display: block;
+}
+
+.container {
+    display: inline-block;
+    width: 75%;
+    height: 600px;
+    background-color: lavender;
+    box-sizing: border-box;
+    box-shadow: -5px -5px 11px purple;
+    vertical-align: top;
+}
+
+.game-area-row {
+    height: 80%;
+    width: 90%;
+}
+
+.card_container {
+    position: relative;
+    display: inline-block;
+    background-color: red;
+    height: 150px;
+    width: 110px;
+}
+
+.card {
+    height: 150px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.card-front {
+    width: 110px;
+}
+
+.card-back {
+    width: 110px;
+}
+
+.card-hidden {
+    display: none;
+}
+
+.matched {
+    display: none;
+}
