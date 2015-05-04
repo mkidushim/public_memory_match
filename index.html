@@ -9,13 +9,9 @@
     var clicked_card = null;
     var counter_match = 0;
     var counter_missed = 0;
-
-
-
     //set clicked_card = to null so that we can check wich card has been clicked first
     function card_click(card_number) {
         //declared function card_click with parameter card_number
-
         console.log("card_number : ", card_number);
         // logs card-number that is clicked to console
         var cardBackId = "#card_back" + card_number;
@@ -36,26 +32,22 @@
         } else {
             //if player has clicked on a card to match do code below
             console.log("Second card was clicked");
-
             //log 'second card was clicked'
             if (clicked_card === current_card_data) {
                 //if first card clicked card-data == to current_card_data run code below
                 console.log("We have a match");
                 $(cardFrontId).removeClass('.card-hidden')
                     //log 'we have a match' to console
-
                 setTimeout(function() {
                     $('.card-hidden').addClass('cards-matched');
                 }, 1200);
                 counter_match++;
                 $('#matches').html('Matched Cards : ' + counter_match)
                 console.log('Matched cards : ', counter_match);
-
                 if (counter_match == 9) {
                     alert('You Win!');
                 }
                 clicked_card = null;
-
                 //reset clicked-card to null so that clicks are reset 
                 //clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
@@ -69,16 +61,12 @@
                 counter_missed++;
                 $('#misses').html('Missed Cards : ' + counter_missed)
                     //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
-
                 clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
             }
-
-
         }
         var acc = counter_match + counter_missed;
         $('#accuracy').html('Matched / Total Tries : ' + counter_match + '/' + acc);
-
     }
     </script>
 </head>
