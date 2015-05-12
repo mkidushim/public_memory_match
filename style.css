@@ -3,6 +3,8 @@ body {
     height: 650px;
 }
 
+.header {}
+
 .logo img {
     position: relative;
     left: 45px;
@@ -18,13 +20,14 @@ body {
     display: inline-block;
     position: relative;
     bottom: 15px;
-    left: 6%;
+    left: 35%;
+    border-bottom: 4px solid blue;
 }
 /*----^-Header-^---*/
 /*---Left Nav----*/
 
 li {
-    font-size: 20px;
+    font-size: 18px;
     display: block;
     padding: 20px 0px 10px 0px;
     list-style: none;
@@ -41,7 +44,7 @@ li {
 
 .game_area {
     position: relative;
-    left: 25%;
+    left: 28%;
     bottom: 175px;
 }
 
@@ -50,7 +53,6 @@ li {
 .card_container {
     position: relative;
     display: inline-block;
-    background-color: red;
     height: 150px;
     width: 110px;
     margin: 5px 5px 15px 5px;

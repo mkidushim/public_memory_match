@@ -43,7 +43,7 @@
                 }, 1200);
                 counter_match++;
                 $('#matches').html('Matched Cards : ' + counter_match)
-                console.log('Matched cards : ', counter_match);
+                console.log('Matched cards: ', counter_match);
                 if (counter_match == 9) {
                     alert('You Win!');
                 }
@@ -59,14 +59,14 @@
                     $('.card-hidden').removeClass('card-hidden');
                 }, 1200);
                 counter_missed++;
-                $('#misses').html('Missed Cards : ' + counter_missed)
+                $('#misses').html('Missed Cards: ' + counter_missed)
                     //settimeout is js built in function with parameter for milliseconds runs remove class jquery function declared inside parameters after the milliseconds is complete
                 clicked_card = null;
                 //reset clicked-card to null so that clicks are reset 
             }
         }
         var acc = counter_match + counter_missed;
-        $('#accuracy').html('Matched / Total Tries : ' + counter_match + '/' + acc);
+        $('#accuracy').html('Matched / Total Tries: ' + counter_match + '/' + acc);
     }
     </script>
 </head>
@@ -77,14 +77,14 @@
             <img src="images/dog.jpg" />
         </div>
         <div class="head_info">
-            <h1>Memory Match</h1>
+            <h1>Memory Match Card Game</h1>
         </div>
     </div>
     <div class="left_nav">
         <ul class="stats">
-            <li id="matches">Matched Cards:0</li>
-            <li id="misses">Missed Cards:0</li>
-            <li id="accuracy">Accuracy:0</li>
+            <li id="matches">Matched Cards: 0</li>
+            <li id="misses">Missed Cards: 0</li>
+            <li id="accuracy">Matched/Total Tries: 0/0</li>
         </ul>
     </div>
     <div class="game_area">
