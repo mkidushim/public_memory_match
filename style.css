@@ -74,7 +74,9 @@ li {
 .card-hidden {
     display: none;
 }
-
-.cards-matched {
+.card-hide {
     display: none;
+}
+.cards-matched {
+    border: 2px solid green;
 }

@@ -9,6 +9,8 @@
     var clicked_card = null;
     var counter_match = 0;
     var counter_missed = 0;
+    var clicked_num =0;
+    var cardBack2 = 0;
     //set clicked_card = to null so that we can check wich card has been clicked first
     function card_click(card_number) {
         //declared function card_click with parameter card_number
@@ -28,6 +30,8 @@
             console.log("First card was clicked");
             //log 'first card was clicked' to the console.
             clicked_card = current_card_data;
+            clicked_num = $(cardFrontId);
+            cardBack2 = $(cardBackId);
             //change clicked_card from null to card-data of current card that was clicked
         } else {
             //if player has clicked on a card to match do code below
@@ -39,7 +43,9 @@
                 $(cardFrontId).removeClass('.card-hidden')
                     //log 'we have a match' to console
                 setTimeout(function() {
-                    $('.card-hidden').addClass('cards-matched');
+                    $(cardFrontId).addClass('cards-matched');
+                    $(clicked_num).addClass('cards-matched');
+                    $('.card-hidden').addClass('card-hidden');
                 }, 1200);
                 counter_match++;
                 $('#matches').html('Matched Cards : ' + counter_match)
@@ -56,7 +62,8 @@
                 console.log("No Match");
                 //log 'no match ' to console
                 setTimeout(function() {
-                    $('.card-hidden').removeClass('card-hidden');
+                    $(cardBackId).removeClass('card-hidden');
+                    $(cardBack2).removeClass('card-hidden');
                 }, 1200);
                 counter_missed++;
                 $('#misses').html('Missed Cards: ' + counter_missed)
