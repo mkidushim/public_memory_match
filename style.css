@@ -27,7 +27,7 @@ li {
     display: inline-block;
     padding: 5px 0px 10px 0px;
     list-style: none;
-    margin-right: 10px;
+    margin-right: 75px;
 }
 
 #button:hover,
@@ -63,9 +63,9 @@ li {
     border-radius: 5px;
     text-align: center;
     height: 35px;
-    padding-bottom: 30px;
     margin-left: 25px;
     width: 100px;
+    margin: 25px 0px 0px 50px;
 }
 
 .card_container {
