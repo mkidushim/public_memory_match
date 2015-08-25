@@ -34,13 +34,15 @@ li {
 .card_container:hover {
     cursor: pointer;
 }
-.col-md-9.col-md-offset-1.col-xs-10{
+.gameboard{
     position: relative;
     left: 25px;
+    top: 55px;
 }
 .nav{
     position: relative;
     left: 20px;
+    top: 25px;
 }
 #accuracy {
     padding: 5px;
