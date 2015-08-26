@@ -1,26 +1,15 @@
-.logo img {
-    position: relative;
-    left: 45px;
-    width: 100px;
-    height: 100px;
+html {
+    background-image: repeating-linear-gradient(90deg,blue, turquoise, blue 50px,turquoise 50px);
 }
 
 .logo {
     display: inline-block;
 }
-
-
-/*
-#D70C0C;
-#E6D916;
-
-*/
-
-
-/*----^-Header-^---*/
-
-
-/*---Left Nav----*/
+h1 {
+    background-color: white;
+    border: 4px solid black;
+    width: 75%;
+}
 
 li {
     font-size: 18px;
@@ -44,21 +33,12 @@ li {
     left: 20px;
     top: 25px;
 }
-#accuracy {
+#accuracy, #matches, #misses {
     padding: 5px;
-    border: 4px solid #E6D916;
+    border: 4px solid black;
+    background-color: white;
 }
 
-#matches {
-    padding: 5px;
-    border: 4px solid #20ADBF;
-}
-
-#misses {
-    padding: 5px;
-    border: 4px solid #D70C0C;
-    ;
-}
 
 #button {
     border: 2px solid black;
