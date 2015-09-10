@@ -1,5 +1,6 @@
 html {
-    background-image: repeating-linear-gradient(90deg,blue, turquoise, blue 50px,turquoise 50px);
+    background-image: url("images/ocean.jpg");
+    background-position: top right;
 }
 
 .logo {
@@ -65,7 +66,10 @@ li {
     left: 0px;
     top: 0px;
 }
-
+.card.card-back{
+    width: 110px;
+    background-color: black;
+}
 .card-front {
     background-color: black;
     width: 110px;
