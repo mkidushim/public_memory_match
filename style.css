@@ -1,6 +1,12 @@
 html {
     background-image: url("images/ocean.jpg");
-    background-position: top right;
+    background-position: top;
+    margin: 0px;
+    padding: 0px;
+    width: 98%;
+    height: 100%;
+    background-size: 105% 100%;
+    background-repeat: no-repeat;
 }
 
 .logo {
