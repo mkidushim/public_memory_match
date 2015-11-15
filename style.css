@@ -8,7 +8,33 @@ html {
     background-size: 105% 100%;
     background-repeat: no-repeat;
 }
+/*.card {
+    height: 150px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.card.card-back{
+    width: 110px;
+    background-color: black;
+}
+.card-front {
+    background-color: black;
+    width: 110px;
+    border-radius: 30px;
+}
 
+.card-hidden {
+    display: none;
+}
+
+.card-hide {
+    display: none;
+}
+
+.cards-matched {
+    border: 4px solid #00CC33;
+}*/
 .logo {
     display: inline-block;
 }
@@ -93,3 +119,4 @@ li {
 .cards-matched {
     border: 4px solid #00CC33;
 }
+/*          This is my portfolio               */
