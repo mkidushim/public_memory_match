@@ -72,6 +72,20 @@ li {
     left: 0px;
     top: 0px;
 }
+.card-hide {
+    display: none;
+}
+
+.cards-matched {
+    border: 4px solid #00CC33;
+}
+/*.card-hide {
+    display: none;
+}
+
+.cards-matched {
+    border: 4px solid #00CC33;
+}*/
 .card.card-back{
     width: 110px;
     background-color: black;
@@ -86,10 +100,4 @@ li {
     display: none;
 }
 
-.card-hide {
-    display: none;
-}
 
-.cards-matched {
-    border: 4px solid #00CC33;
-}
